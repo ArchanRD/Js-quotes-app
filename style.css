@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #d6dbf2;
+}
+
+.glow-on-hover {
+    font-size: 20px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #000;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 90px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 90px;
+}
+
+.glow-on-hover::before {
+    opacity: 1;
+    border-radius: 90px;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;;
+    left: 0;
+    top: 0;
+    border-radius: 90px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 50px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+#randomquote {
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btnGlow{
+    background: blueviolet;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    animation-name: glow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.btn {
+    font-size: 25px;
+    background: blueviolet;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.btn:hover {
+    background-color: #7e26d0;
+}
+
+.btn:active {
+    background-color: #5a1699;
+}
+
+#authorContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.authorName {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(194, 130, 254, 0.247);
+    color: rgb(152, 41, 255);
+    padding: 5px 20px;
+    border-radius: 90px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all ease 0.3s;
+}
+
+.authorName:hover {
+    background-color: rgba(166, 89, 239, 0.247);
+}
+
+#authorListContainer {
+    margin: 50px 0 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.authorQuotes {
+    background-color: white;
+    color: black;
+    font-size: 23px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.ins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.highlight {
+    background: blueviolet;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 90px;
+}
+
+@media (max-width: 576px) {
+    .heading {
+        font-size: 30px;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .ins {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+
+    #authorContainer {
+        margin-top: 30px;
+    }
+
+    .authorName {
+        font-size: 15px;
+    }
+    #randomquote{
+        font-size: 25px;
+    }
+}
